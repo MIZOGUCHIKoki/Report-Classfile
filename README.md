@@ -2,11 +2,10 @@
 - [platex用](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/(u)platex/kut_exp.cls)
     - 多くの警告が出ます．
     - uplatex で利用する場合は，変更が必要です．[こちらのIssue(#8)](https://github.com/MIZOGUCHIKoki/LaTeX/issues/8)を参照してください．（From [250300i](https://github.com/250300i)）
-    - 利用例は[こちら](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/(u)platex/test.tex)
     
 - [lualatex用](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/lualatex/kut_exp.cls)
     - 推奨です．
-    - 利用例は[こちら](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/lualatex/test.tex)
+    
 <details>
     <summary>読み込み済みパッケージ</summary>
   
