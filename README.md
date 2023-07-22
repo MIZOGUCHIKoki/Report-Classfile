@@ -1,7 +1,7 @@
 ## 情報学群実験レポート用クラスファイル
 - [platex用](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/(u)platex/kut_exp.cls)
     - 多くの警告が出ます．
-    - uplatex で利用する場合は，変更が必要です．[こちらのIssue(#8)](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/issues/8)を参照してください．（From [250300i](https://github.com/250300i)）
+    - uplatex で利用する場合は，変更が必要です．[こちらのIssue(#8)](https://github.com/MIZOGUCHIKoki/LaTeX/issues/8)を参照してください．（From [250300i](https://github.com/250300i)）
     - 利用例は[こちら](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/(u)platex/test.tex)
     
 - [lualatex用](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/master/Classfile/kut_exp/lualatex/kut_exp.cls)
@@ -11,7 +11,7 @@
     <summary>読み込み済みパッケージ</summary>
   
 - `silence`
-- `listngs`
+- `listngs`（(u)platex用はjvlistingも）
 - `hyperref`
 - `fancyhdr`
 - `amsmath`
@@ -48,6 +48,6 @@
 - `\studentid{}`：学籍番号
 - `\name{}`：氏名
 - `\group{}`：所属グループ
-- `\llab{}`：所属研究室
+- `\institution{}`：所属大学・研究室
 - `\date{}`：更新日OR提出期限
 
