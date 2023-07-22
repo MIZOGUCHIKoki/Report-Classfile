@@ -1,0 +1,65 @@
+% ターミナルで $ uplatex text.tex を2回実行して，$ dvipdfmx text.dvi でPDFを生成してください．
+\documentclass[dvipdfmx]{exp_report}
+\titlehead{情報学群実験第4C/4i 実験レポート 第1回} % タイトルの上につける文字列．実験名などを入れる
+\title{情報学群実験レポートクラスファイル利用例} % タイトル
+\studentid{1250373} % 学籍番号
+\name{溝口 洸熙} % 氏名
+\group{Group 5C} % 所属グループ名（空白でも良い）
+\institution{高知工科大学 情報学群 情報セキュリティシステム研究室} % 所属大学・研究室（空白でも良い）
+\date{July 3rd, 2023} % 更新日 or 提出期限
+\begin{document}
+\chapter{プリアンブルの記述}
+\begin{description}
+    \item[\texttt{\textbackslash titlehead\{\}}] 実験タイトルの上部に記述する文字列を入力する，実験名やレポート回数など．
+    \item[\texttt{\textbackslash title\{\}}] レポートのタイトルを入力する．
+    \item[\texttt{\textbackslash studentid\{\}}] 学籍番号を入力する．
+    \item[\texttt{\textbackslash name\{\}}] 氏名を入力する．
+    \item[\texttt{\textbackslash group\{\}}] 所属グループ名を入力する．
+    \item[\texttt{\textbackslash institution\{\}}] 所属大学・研究室を入力する．
+    \item[\texttt{\textbackslash date\{\}}] 更新日か提出期限を入力する．
+\end{description}
+\chapter{相互参照}
+\section{図の挿入と図の参照}
+\verb|figure|環境内で\verb|\includegraphics[options]{file path}|を用いて図を挿入する．
+図の場合は，図の下に\verb|\caption{}|をつける．\verb|\caption{}|の下には\verb|\label{}|を宣言し，\verb|\figref{}|相互参照する．
+\begin{lstlisting}[language={tex},frame={single},basicstyle={\ttfamily}]
+\begin{figure}[h]
+    \centering % 中央寄せする．
+    % 図の挿入，比を保ち，横幅3cmに．
+    \includegraphics[keepaspectratio,width=3cm]{tiger.pdf} 
+    \caption{キャプション}
+    \label{fig:example}
+\end{figure}
+\figref{fig:example}に〜を示す．
+\end{lstlisting}
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio,width=3cm]{tiger.pdf}
+    \caption{キャプション}
+    \label{fig:example}
+\end{figure}
+\figref{fig:example}に〜を示す．
+\section{表の作成と参照}
+\verb|table|環境内で作成した表の参照には\verb|\tblref{}|を用いると，「表XX」と表示される．\\
+例：\tblref{tbl:九州の政令指定都市}に，九州の政令指定都市を示す．
+\begin{table}[h]
+    \centering
+    \caption{九州の政令指定都市}
+    \label{tbl:九州の政令指定都市}
+    \begin{tabular}{cc}
+        \hline
+        福岡県 & 福岡市  \\
+        福岡県 & 北九州市 \\
+        熊本県 & 熊本市  \\
+        \hline
+    \end{tabular}
+\end{table}
+\appendix % 付録宣言
+\section{付録の付け方}
+付録は，\verb|\appendix|と書く．
+ソースコードを挿入するには，\verb|lstlisting|環境を使う．
+\begin{lstlisting}[caption={付録です},language={python},label={src:appendix},frame={single},basicstyle={\ttfamily},numbers={left}]
+print('a')
+\end{lstlisting}
+ソースコードの参照は，\verb|\srcref{src:appendix}|（結果：\srcref{src:appendix}）のようにします．
+\end{document}
